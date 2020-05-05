@@ -14,7 +14,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bVPmNWax2GqOQSQn2ypeZBkp6Z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,6 +29,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -48,11 +53,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588714446006</updated>
-      <workItem from="1588714447750" duration="2210000" />
+      <workItem from="1588714447750" duration="3827000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="391" y="0" key="#Notifications" timestamp="1588721557187">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="391" y="0" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1588721557187" />
+    <state x="566" y="96" key="FileChooserDialogImpl" timestamp="1588721611582">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="566" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1588721611582" />
+    <state x="286" y="0" key="SettingsEditor" timestamp="1588721617360">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="286" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1588721617360" />
   </component>
 </project>
