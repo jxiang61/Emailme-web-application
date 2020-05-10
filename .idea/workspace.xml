@@ -2,16 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f02e87e5-fd08-4209-a585-bcbc183e8a62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/keys.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.env.development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.env.production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Landing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Payments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/reducers/authReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/setupProxy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/requireLogin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/billingRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/keys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +52,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MongoProj/uber" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../streams" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jzhsi\Desktop\ReactProj\server\client" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -67,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588714446006</updated>
-      <workItem from="1588714447750" duration="28609000" />
+      <workItem from="1588714447750" duration="72689000" />
     </task>
     <servers />
   </component>
@@ -79,14 +98,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="391" y="0" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1588721557187" />
+    <state x="694" y="146" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589055237127">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="694" y="146" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1589055237127" />
     <state x="502" y="0" key="CommitChangelistDialog2" timestamp="1588900705809">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="502" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1588900705809" />
-    <state x="566" y="96" key="FileChooserDialogImpl" timestamp="1588784753688">
+    <state x="566" y="96" key="FileChooserDialogImpl" timestamp="1588955188659">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="566" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1588784753688" />
+    <state x="566" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1588955188659" />
     <state x="453" y="51" key="RollbackChangesDialog" timestamp="1588900723777">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

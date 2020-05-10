@@ -1,9 +1,12 @@
 const express = require('express');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
+
 require('./models/User');
 require('./services/passport'); //make sure to execute the passport part
 const authRoutes = require('./routes/authRoutes');
+const billingRouetes = require('./routes/billingRoutes');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
@@ -13,6 +16,8 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+//middleware, convert the body to json
+app.use(bodyParser.json());
 
 app.use(
     cookieSession({
@@ -26,7 +31,22 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 authRoutes(app);
+billingRouetes(app);
 
+//let express handle the incoming route request from front end
+if (process.env.NODE_ENV === 'production') {
+    //Express will serve up the production assets
+    //like main.js file in build
+    app.use(express.static('client/build'));
+
+    //Express will serve up the index.html file
+    //if express doesn't know the request route from front end,
+    //just send index.html
+    const path = require('path');
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
 
 
 

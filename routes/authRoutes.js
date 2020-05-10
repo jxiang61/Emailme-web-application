@@ -12,12 +12,19 @@ module.exports = (app) => {
         ));
 
     //with the code after callback, passport knows how to send users' info back
-    app.get('/auth/google/callback', passport.authenticate('google'))
+    app.get(
+        '/auth/google/callback',
+        passport.authenticate('google'),
+        (req, res) => {
+            res.redirect('/surveys');
+        }
+    );
 
     //handle for logging out
     app.get('/api/logout', (req, res) => {
         //takes the user cookie and kill it
         req.logout();
+        res.redirect('/');
     });
 
     //req comes from cookie handled by passport
