@@ -5,27 +5,26 @@ import * as actions from '../actions';
 
 import Header from "./Header";
 import Landing from "./Landing";
-
-const Dashboard = () => <h2>Dashboard</h2>
-const SurveyNew = () => <h2>SurveyNew</h2>
+import Dashboard from "./Dashboard";
+import SurveyNew from "./surveys/SurveyNew";
 
 class App extends Component {
 
     componentDidMount() {
         //props comes from connect "actions"
         this.props.fetchUser();
-
     }
 
     render() {
         return (
             <div className="container">
                 <BrowserRouter>
-                    <div>
+                    <div className="container">
                         <Header/>
                         <Route path="/" exact={true} component={Landing}/>
                         <Route path="/surveys" exact={true} component={Dashboard}/>
                         <Route path="/surveys/new" exact={true} component={SurveyNew}/>
+
 
                     </div>
                 </BrowserRouter>

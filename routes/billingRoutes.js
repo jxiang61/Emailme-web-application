@@ -22,6 +22,8 @@ module.exports = app => {
         req.user.credits += 5;
         const user = await req.user.save();
 
+        //send user's info back to front end
+        //so we can see the credits changes in the web page
         res.send(user);
 
     })

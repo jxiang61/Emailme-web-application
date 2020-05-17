@@ -1,5 +1,10 @@
 const passport = require("passport");
 
+//the idea about data between front-end and back-end:
+//front-end pass data to req
+//back-end takes in the data from req, then do something
+//then back-end send res to front-end
+
 module.exports = (app) => {
     app.get(
         '/auth/google',

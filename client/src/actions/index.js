@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {FETCH_USER} from "./types";
+import {FETCH_USER, FETCH_SURVEYS} from "./types";
 
 export const fetchUser = () => {
     return async (dispatch) => {
@@ -16,5 +16,31 @@ export const handleToken = (token) => {
 
         dispatch({type:FETCH_USER, payload: res.data});
     }
+}
+
+export const submitSurvey = (values, history) => {
+    return async (dispatch) => {
+        //post data to backend
+        //in backend, we defined the same route
+        //in this way, we connect frontend with backend
+        const res = await axios.post('/api/surveys', values);
+
+        //after this action is executed, navigate to this history page
+        history.push('/surveys');
+
+        dispatch({type: FETCH_USER, payload: res.data})
+    }
+}
+
+export const fetchSurveys = () => {
+    return async (dispatch) => {
+        //in backend, we user res.send({}) to frontend
+        //here, we use axios.get() to receive the response.
+        const res = await axios.get('/api/surveys');
+
+        dispatch({type: FETCH_SURVEYS, payload: res.data})
+
+    }
+
 }
 

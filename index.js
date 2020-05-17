@@ -3,9 +3,11 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 
 require('./models/User');
+require('./models/Survey');
 require('./services/passport'); //make sure to execute the passport part
 const authRoutes = require('./routes/authRoutes');
 const billingRouetes = require('./routes/billingRoutes');
+const surveyRoutes = require('./routes/surveyRoutes');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
@@ -32,6 +34,7 @@ app.use(passport.session());
 
 authRoutes(app);
 billingRouetes(app);
+surveyRoutes(app);
 
 //let express handle the incoming route request from front end
 if (process.env.NODE_ENV === 'production') {
@@ -47,8 +50,6 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
-
-
 
 //wait for web server assigning port for us.
 //if web server give us a port, use the first one,
