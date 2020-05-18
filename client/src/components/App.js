@@ -19,11 +19,10 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <Router history={history}>
                     <Header/>
                     <div className="container">
-
                         <Route path="/" exact={true} component={Landing}/>
                         <Route path="/surveys" exact={true} component={Dashboard}/>
                         <Route path="/surveys/new" exact={true} component={SurveyNew}/>
