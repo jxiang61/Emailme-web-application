@@ -1,0 +1,24 @@
+#d-title {
+    color: steelblue;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+}
+
+#d-body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+#d-date {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+#emailme {
+    font-family: Brush Script MT, cursive;
+    font-size: 40px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    margin-left: 10px;
+}

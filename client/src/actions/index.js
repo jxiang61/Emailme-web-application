@@ -1,5 +1,6 @@
 import axios from 'axios';
-import {FETCH_USER, FETCH_SURVEYS} from "./types";
+import {FETCH_USER, FETCH_SURVEYS, DELETE_SURVEY, FETCH_SURVEY} from "./types";
+import history from "../history";
 
 export const fetchUser = () => {
     return async (dispatch) => {
@@ -30,7 +31,7 @@ export const submitSurvey = (values, history) => {
 
         dispatch({type: FETCH_USER, payload: res.data})
     }
-}
+};
 
 export const fetchSurveys = () => {
     return async (dispatch) => {
@@ -38,9 +39,27 @@ export const fetchSurveys = () => {
         //here, we use axios.get() to receive the response.
         const res = await axios.get('/api/surveys');
 
-        dispatch({type: FETCH_SURVEYS, payload: res.data})
+        //console.log(res.data)
+        dispatch({type: FETCH_SURVEYS, payload: res.data});
+    }
+};
+
+export const deleteSurvey = (id) => {
+    return async (dispatch) => {
+        await axios.delete(`/api/surveys/delete/${id}`);
+
+        dispatch({type: DELETE_SURVEY, payload: id});
+
+        history.push('/surveys')
 
     }
+};
 
+export const fetchSurvey = (id) => {
+    return async (dispatch) => {
+        const res = await axios.get(`/api/survey/${id}`);
+
+        dispatch({type: FETCH_SURVEY, payload: res.data});
+    }
 }
 

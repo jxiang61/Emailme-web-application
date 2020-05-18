@@ -3,6 +3,7 @@ const _  = require('lodash');
 //help us clean the passing-in url
 const {Path} = require('path-parser');
 const {URL} = require('url');
+var ObjectId = require('mongodb').ObjectID;
 
 const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
@@ -22,6 +23,8 @@ module.exports = app => {
     //this route is mainly for creating a new survey and save it to mongoDB
     //and sent out an email to users
     app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
+
+
         //in front end, we pass those info to req.body
         const {title, subject, content, recipients} = req.body;
 
@@ -116,6 +119,7 @@ module.exports = app => {
 
     //poll out all surveys in DB
     app.get('/api/surveys', requireLogin, async (req, res) => {
+
         const surveys = await Survey
             .find({_user: req.user.id})
             .select({recipients: false}); //do not give these properties back
@@ -124,6 +128,22 @@ module.exports = app => {
         res.send(surveys);
     });
 
+    //delete one survey in DB
+    //once frontend execute the action, the req will be sent, backend will do something like here.
+    app.delete('/api/surveys/delete/:id', requireLogin, async(req, res) => {
+
+        const surveys = await Survey.deleteOne({_id: ObjectId(req.params.id)});
+
+        res.send(surveys);
+
+    });
+
+    //fetch one survey from DB
+    app.get('/api/survey/:id', requireLogin, async (req, res) => {
+        const survey = await Survey.findOne({_id: ObjectId(req.params.id)});
+
+        res.send(survey);
+    });
 };
 
 

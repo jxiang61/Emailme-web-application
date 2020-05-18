@@ -1,6 +1,9 @@
 import React from "react";
 import {connect} from 'react-redux';
+import {Link} from "react-router-dom";
+
 import {fetchSurveys} from "../../actions";
+import '../../display/dashboard.css';
 
 class SurveyList extends React.Component{
 
@@ -13,19 +16,32 @@ class SurveyList extends React.Component{
             return (
                 <div className='card darken-1' key={survey._id}>
                     <div className="card-content">
-                        <span className='card-title'>
+                        <span id='d-title' className='card-title'>
                             {survey.title}
                         </span>
-                        <p>
+                        <p id='d-body'>
                             {survey.body}
                         </p>
-                        <p className='right'>
-                            Send On: {new Date(survey.dateSent).toLocaleDateString()}
+                        <p id='d-date' className='right'>
+                            Send Date: {new Date(survey.dateSent).toLocaleDateString()}
                         </p>
                     </div>
                     <div className='card-action'>
-                        <a>Yes: {survey.yes}</a>
-                        <a>No: {survey.no}</a>
+                        <a>
+                            <i className='material-icons'>thumb_up</i>
+                            <span style={{marginLeft:'5px'}}> {survey.yes}</span>
+                        </a>
+                        <a>
+                            <i className='material-icons'>thumb_down</i>
+                            <span style={{marginLeft:'5px'}}> {survey.no}</span>
+                        </a>
+
+                        <Link
+                            to={`/surveys/delete/${survey._id}`}
+                            className='btn-small right red'
+                        >
+                            Delete
+                        </Link>
                     </div>
                 </div>
             )
@@ -43,7 +59,7 @@ class SurveyList extends React.Component{
 
 function mapStateToProps(state) {
     //state.surveys comes from the reducer combination
-    return {surveys: state.surveys};
+    return {surveys: Object.values(state.surveys)};
 }
 
 export default connect(mapStateToProps, {fetchSurveys})(SurveyList);

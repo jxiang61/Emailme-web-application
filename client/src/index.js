@@ -22,5 +22,3 @@ ReactDOM.render(
     document.querySelector("#root")
 );
 
-console.log('sp:', process.env.REACT_APP_STRIPE_KEY);
-console.log('Esp:', process.env.NODE_ENV);

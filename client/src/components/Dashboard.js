@@ -6,12 +6,19 @@ const Dashboard = () => {
 
     return (
         <div>
-            <SurveyList />
-            <div className="fixed-action-btn">
-                <Link to="/surveys/new" className="btn-floating btn-large red">
-                    <i className="material-icons">add</i>
-                </Link>
+            <div style={{marginTop:'20px'}} className='ui info message'>
+                <h1 style={{fontSize:'3rem',textAlign:'center'}}>
+                    <strong>Dashboard</strong>
+                </h1>
+                <div style={{textAlign:'center', fontSize:'17px'}}>
+                    <Link to="/surveys/new" >
+                        Click to create a new survey!
+                    </Link>
+
+                </div>
+
             </div>
+            <SurveyList />
         </div>
     )
 }
