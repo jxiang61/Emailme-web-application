@@ -15,7 +15,8 @@ ReactJs + Redux + MongoDB + Express + NodeJS + Google OAuth
 
 1. git clone: `https://github.com/jxiang61/Emailme-web-application.git`
 2. Run `npm install` 
-3. Run `npm run start --prefix client`
+3. Set up your own development keys in Config folder
+4. Run `npm run start --prefix client`
 
 ## Author
 * Built by Jay Xiang / jzhsiang@gmail.com
